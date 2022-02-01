@@ -1,0 +1,17 @@
+body {
+    background: #fafafa;
+    color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+}
+
+.page_content {
+    background: lightyellow;
+    padding: 10px;
+    border: 1px solid #adadad;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 400px;
+}
