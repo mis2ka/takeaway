@@ -48,6 +48,19 @@ public class CartController {
         return "redirect:../../cart";
     }
 
+    @GetMapping("remove/{id}")
+    public String remove(
+            @PathVariable("id") Long id,
+            Model model,
+            HttpSession session) {
+        List<Item> get_items = (List<Item>) session.getAttribute("cart");
+        int index = exists(id, get_items);
+        get_items.remove(index);
+        session.setAttribute("cart", get_items);
+        return "redirect:../../cart";
+
+    }
+
     private int exists(Long id, List<Item> get_items) {
         for(int i=0; i<get_items.size(); i++) {
             if(get_items.get(i).getOrder().getId() == id) {
