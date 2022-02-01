@@ -29,8 +29,8 @@
     <br>
     <br>
     <div class="container">
+        <a th:href = "@{/cart}" class="btn btn-info">Koszyk</a>
         <div class="row">
-            <a th:href = "@{/orders/cart}" class="btn btn-primary btn-sm">Koszyk</a>
             <h2>Wybierz co chcesz zamówić</h2>
         </div>
         <article class="media page_content" th:each = "order: ${orders}">
@@ -39,8 +39,9 @@
                     <a class="author" th:text = "${order.restaurant}"></a>
                 </div>
                 <h2><a class="article_title" th:text = "${order.product}"></a></h2>
-                <p class="article_content" th:text = "${order.price}">zl</p>
+                <a class="btn btn-success btn-sm" th:href="${'/cart/buy/'+order.id}">Kupuję</a>
             </div>
+            <h6><a class="article_content" th:text = "${order.price}"></a>0 zł</h6>
         </article>
     </div>
 </body>

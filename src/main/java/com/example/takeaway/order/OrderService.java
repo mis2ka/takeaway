@@ -7,18 +7,30 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Service("orderService")
+@Transactional
 public class OrderService {
 
     private final OrderRepository orderRepository;
 
     @Autowired
+//    private OrderDAO orderDAO;
+    //@Override
     public OrderService(OrderRepository orderRepository) {
         this.orderRepository = orderRepository;
     }
 
+//    public Iterable<Order> findAll(); {
+//        return orderRepository.findAll();
+//    }
     public List<Order> getOrders() {
         return  orderRepository.findAll();
+    }
+
+    public Order find(Long id) {
+//        return orderRepository.findOne(id); //findDAO
+//        Order orderOptional =
+        return orderRepository.findOrderById(id);
     }
 
     public void addNewOrder(Order order) {

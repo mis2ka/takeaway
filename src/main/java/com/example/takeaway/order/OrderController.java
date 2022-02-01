@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+//@RequestMapping("orders")
 public class OrderController {
 
     private final OrderService orderService;

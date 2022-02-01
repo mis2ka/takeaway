@@ -15,7 +15,7 @@ public class OrderConfig {
             Order pizza = new Order(
                     "Pizza",
                     "PizzaHut",
-                    31.30,
+                    31.0,
                     false);
 
             Order sushi = new Order(
