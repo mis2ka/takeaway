@@ -36,5 +36,16 @@ public class OrderController {
         feedbackController.sendFeedback(feedback, bindingResult);
         return "redirect:/orders";
     }
+
+//    @PostMapping("/orders")
+//    public String createNewOrder(@ModelAttribute("order") Order order) {
+//        orderService.addNewOrder(order);
+//        return "redirect:../../orders";
+//    }
+
+//    @DeleteMapping(path = "{orderId}")
+//    public void deleteOrder(@PathVariable("orderId") Long orderId) {
+//        orderService.deleteOrder(orderId);
+//    }
 }
 
