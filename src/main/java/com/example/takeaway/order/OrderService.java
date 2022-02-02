@@ -33,22 +33,27 @@ public class OrderService {
         return orderRepository.findOrderById(id);
     }
 
-    public void addNewOrder(Order order) {
-        Optional<Order> orderOptional = orderRepository
-                .findOrderByProduct(order.getProduct());
-        if (orderOptional.isPresent()) {
-            throw new IllegalStateException("zamowienie pobrane");
-        }
-        orderRepository.save(order);
-    }
 
-    public void deleteOrder(Long orderId) {
-        boolean exists = orderRepository.existsById(orderId);
-        if (!exists) {
-            throw new IllegalStateException("Zamowienie o id " + orderId + " nie istnieje");
-        }
-        orderRepository.deleteById(orderId);
-    }
+//    public Feedback saveFeedback(Feedback feedback) {
+//        return feedbackRepository.save(feedback);
+//    }
 
+
+//    public void addNewOrder(Order order) {
+//        Optional<Order> orderOptional = orderRepository
+//                .findOrderByProduct(order.getProduct());
+//        if (orderOptional.isPresent()) {
+//            throw new IllegalStateException("zamowienie pobrane");
+//        }
+//        orderRepository.save(order);
+//    }
+//
+//    public void deleteOrder(Long orderId) {
+//        boolean exists = orderRepository.existsById(orderId);
+//        if (!exists) {
+//            throw new IllegalStateException("Zamowienie o id " + orderId + " nie istnieje");
+//        }
+//        orderRepository.deleteById(orderId);
+//    }
 }
 

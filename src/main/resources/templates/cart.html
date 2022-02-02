@@ -43,6 +43,11 @@
         <br>
     <!--    <a th:href = "${'/cart/buy/' + order.id}">Kontynuuj zakupy</a>-->
         <a class="btn btn-info" th:href = "${'/orders'}">Kontynuuj zakupy</a>
+        <div class="row">
+            <div class="col-lg-3">
+                <a th:href="@{/feedback/new}" class="btn btn-info">Płacę</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Złóż zamówienie</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark nav_menu fixed-top">
+    <div class="container">
+        <a class="navbar-brand mr-4" href="#">Nie-gotuj.pl</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" th:href="@{/orders}">Strona główna</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<div class="container">
+
+    <div class="page_content">
+        <form th:action="@{/feedback/new}" th:object="${feedback}" method="POST">
+            <fieldset class="form-group">
+                <label class="border-bottom mb-4">Imię
+                    <input type="text"
+                           name="name"
+                           th:field="*{name}"
+                           class = "form-control"
+                    />
+                </label>
+                <label class="border-bottom mb-4">Email
+                    <input type="text"
+                           name="email"
+                           th:field="*{email}"
+                           class = "form-control"
+                    />
+                </label>
+                <label class="border-bottom mb-4">Feedback
+                    <input type="text"
+                           name="feedback"
+                           th:field="*{feedback}"
+                           class = "form-control"
+                    />
+                </label>
+
+            </fieldset>
+            <div class="box-footer">
+                <button class="btn btm-primary" type="submit">Podtwierdź</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
