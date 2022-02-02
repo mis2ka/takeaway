@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository //responsible for data access
+@Repository //dostęp do danych
 public interface OrderRepository
         extends JpaRepository<Order, Long> {
 

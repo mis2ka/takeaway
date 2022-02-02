@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Koszyk</title>
+    <title>Złóż zamówienie</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link th:href="@{/styles/style.css}" rel="stylesheet" />
 </head>
@@ -25,29 +25,34 @@
     <br>
     <div class="container">
         <div class="row">
-            <h2>Koszyk</h2>
+            <h2>Komu wysłać zamówienie?</h2>
         </div>
-        <article class="media page_content" th:each = "item: ${session.cart}">
-            <div class="media-body">
-                <div>
-                    <a class="author" th:text = "${item.order.restaurant}"></a>
-                </div>
-                <h2>
-                    <a class="article_title" th:text = "${item.quantity}">x   </a>
-                    <a class="article_title" th:text = "${item.order.product}"></a>
-                </h2>
-                <a class="btn btn-secondary btn-sm" th:href="${'/cart/remove/'+item.order.id}">Usuń</a>
-            </div>
-            <h6>Cena: <a th:text = "${item.order.price * item.quantity}"></a>0 zł</h6>
-        </article>
-        <br>
 
-        <a class="btn btn-info" th:href = "${'/orders'}">Kontynuuj zakupy</a>
-        <div class="row" style="float: left">
-            <div class="col-lg-3 mr-3">
-                <a th:href="@{/feedback/new}" class="btn btn-info">Płacę</a>
-            </div>
+        <div class="page_content">
+            <form th:action="@{/feedback/new}" th:object="${feedback}" method="POST">
+                <fieldset class="form-group">
+                    <label class="border-bottom mb-4">Imię
+                        <input type="text"
+                               name="name"
+                               th:field="*{name}"
+                               class = "form-control"
+                        />
+                    </label>
+                    <label class="border-bottom mb-4">Email
+                        <input type="text"
+                               name="email"
+                               th:field="*{email}"
+                               class = "form-control"
+                        />
+                    </label>
+
+                </fieldset>
+                <div class="box-footer">
+                    <button class="btn btm-primary" type="submit">Podtwierdź</button>
+                </div>
+            </form>
         </div>
+
     </div>
 </body>
 </html>

@@ -1,7 +1,5 @@
 package com.example.takeaway.order;
 
-import java.util.Optional;
-
 public class Item {
 
     private Order order;

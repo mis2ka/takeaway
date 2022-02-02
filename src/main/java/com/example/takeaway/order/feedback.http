@@ -1,0 +1,10 @@
+POST  http://localhost:8080/feedback
+Content-Type: application/json
+
+{
+  "name": "Michal",
+  "email": "user@student.pwr.edu.pl",
+  "feedback": "Życzymy smacznego!"
+}
+
+###
